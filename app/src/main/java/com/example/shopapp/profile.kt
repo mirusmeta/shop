@@ -21,7 +21,11 @@ class profile : AppCompatActivity() {
         val logout:TextView = findViewById(R.id.logout)
         val adressofuser:TextView = findViewById(R.id.adressofuser)
         val adresschange:TextView = findViewById(R.id.adresschange)
+        val cart:ImageView = findViewById(R.id.cart)
 
+        cart.setOnClickListener {
+            startActivity(Intent(this, orders::class.java))
+        }
         mainscreen.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }

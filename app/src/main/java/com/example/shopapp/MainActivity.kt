@@ -22,10 +22,14 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences = getSharedPreferences("IN", MODE_PRIVATE)
         val welcometext:TextView = findViewById(R.id.welcometext)
         val profilee:ImageView = findViewById(R.id.profile)
+        val cart:ImageView = findViewById(R.id.cart)
 
         welcometext.text = "Welcome, ${sharedPreferences.getString("name", "null")}"
         profilee.setOnClickListener {
             startActivity(Intent(this, profile::class.java))
+        }
+        cart.setOnClickListener {
+            startActivity(Intent(this@MainActivity, orders::class.java))
         }
         firebaseUpdate()
 
